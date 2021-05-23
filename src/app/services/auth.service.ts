@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User, Login, UserNoPW } from '../models/User';
-
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
@@ -13,9 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  loggedIn() {
-    throw new Error('Method not implemented.');
-  }
+
   authToken: any;
   user:User
  
@@ -43,5 +40,7 @@ export class AuthService {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
+    
   }
+
 }

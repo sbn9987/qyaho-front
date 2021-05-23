@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   password: string;
   password1: string;//
   password2: string;//
-  age: number;//
+  birth: number;//
 
   constructor(
     private validateService: ValidateService, 
@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
       email: this.email,
       username: this.username,
       password: this.password1,
-      age: this.age
+      age: this.birth
       }
 
     
@@ -56,10 +56,10 @@ export class RegisterComponent implements OnInit {
 
     this.authService.registerUser(user).subscribe(data => {
       if(data.success) {
-        this.flashMessage.show('You are now registered and can log in', {cssClass: 'alert-success', timeout: 3000});
+        this.flashMessage.show('회원가입 되었습니다. 로그인 하세요!', {cssClass: 'alert-success', timeout: 3000});
         this.router.navigate(['/login']);
       } else {
-        this.flashMessage.show('Something went wrong', {cssClass: 'alert-danger', timeout: 3000});
+        this.flashMessage.show(' 동일한 아이디 또는 이메일이 존재합니다.', {cssClass: 'alert-danger', timeout: 3000});
         this.router.navigate(['/register']);
       }
     });

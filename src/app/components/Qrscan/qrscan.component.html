@@ -10,8 +10,8 @@
 
   .terminal {
     position: relative;
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 1000px;
     border-radius: 6px;
     padding-top: 45px;
     margin-top: 8px;
@@ -32,18 +32,21 @@
 <div class="content" role="main">
 
 <input type="hidden" #selection>
-
-  <div class="terminal" [ngSwitch]="selection.value">
-    <pre *ngSwitchDefault>--------------------여기에 QR코드를 스캔하세요---------------------
+  <div class="terminal" [ngSwitch]="selection.value" style="text-align: center; font-size: 24px; font-style:bold;">
+    <br>
+    <br>
+    <pre *ngSwitchDefault>-------------여기에 QR코드를 스캔하세요-----------------
     <div>
       <qr-scanner
      [debug]="false" 
-     [canvasWidth]="1080" 
+     [canvasWidth]="900" 
      [canvasHeight]="720"
      [stopAfterScan]="true"
      [updateTime]="500">
     </qr-scanner>
+    
      </div>
+     
      </pre>
   </div>
 

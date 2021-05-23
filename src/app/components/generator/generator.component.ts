@@ -9,7 +9,7 @@ export class GeneratorComponent {
   
   title = 'Generator default';
   qr = '';
-  name = String
+  name = String;
   id = String;
   phone = Number;
   elementType = 'url';

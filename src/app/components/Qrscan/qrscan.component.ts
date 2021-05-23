@@ -18,6 +18,15 @@ export class QrscanComponent implements OnInit {
     ngOnInit() {
 
     }
+
+        "Content-Type" : "application/json; charset=utf-8"
+
+        "Accept" : "application/json"
+
+
+
+
+
     ngAfterViewInit(): void {
         this.qrScannerComponent.getMediaDevices().then(devices => {
             console.log(devices);
@@ -45,6 +54,7 @@ export class QrscanComponent implements OnInit {
  
         this.qrScannerComponent.capturedQr.subscribe(result => {
             console.log(result);
+
         });
     
 
