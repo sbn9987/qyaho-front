@@ -17,7 +17,8 @@ import { AuthService } from './services/auth.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
-
+import {NgQrScannerModule } from 'angular2-qrscanner';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
     HomeComponent,
     GeneratorComponent,
     QrscanComponent,
+   
     
   ],
   imports: [
@@ -38,6 +40,8 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
     HttpClientModule,
     FlashMessagesModule,
     NgxQRCodeModule,
+    NgQrScannerModule,
+    TooltipModule
   ],
   providers: [ValidateService, AuthService, FlashMessagesService],
   bootstrap: [AppComponent]

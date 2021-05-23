@@ -2,7 +2,7 @@ import {Component, ViewChild, ViewEncapsulation, OnInit} from '@angular/core';
 import {QrScannerComponent} from 'angular2-qrscanner';
  
 @Component({
-    selector: 'app-root',
+    selector: 'app-qrscan',
     templateUrl: './qrscan.component.html',
     styleUrls: ['./qrscan.component.css'],
     encapsulation: ViewEncapsulation.None,

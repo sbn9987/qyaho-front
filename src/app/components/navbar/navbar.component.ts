@@ -31,5 +31,10 @@ export class NavbarComponent implements OnInit {
   checkLoggedIn() {
     return this.authService.loggedIn();
   }
+  loggedIn(){
+
+  }
+
+  
 }
 
