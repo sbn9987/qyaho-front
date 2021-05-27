@@ -1,0 +1,28 @@
+<style type="text/css">
+
+    .blank {
+        height: 150px;
+    }
+    
+        </style>
+    
+    <br>
+    <br>    
+    <br>
+   
+   
+    <div *ngIf="!checkLoggedIn()" style= "text-align: center; vertical-align:top">
+    <h1 >아직 계정이 없으신가요?</h1>
+    <h4> 계정이 있으시면 로그인하세요!</h4>
+    <br>
+    <button *ngIf="!checkLoggedIn()" type="button"  class="btn btn-primary"
+            routerLink='/register'>회원가입</button>
+            &nbsp;
+            <button  *ngIf="!checkLoggedIn()" type="button"  style=  "text-align: center;  vertical-align:top" class="btn btn-primary" type="button" class="btn btn-primary"
+            routerLink='/login'>로그인</button>
+        </div>  
+
+        <br> 
+       <div  *ngIf="checkLoggedIn()" style=  "text-align: left ; vertical-align:bottom;">
+      <app-customer-post></app-customer-post>
+    </div>  

@@ -1,0 +1,15 @@
+<h2 class="page-header">Login </h2>
+<br>
+<form (ngSubmit) = "onLoginSubmit()">
+    <div class="form-group">
+        <label>ID</label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="username">
+    </div>
+    <br>
+    <div class="form-group">
+        <label>비밀번호</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="password">
+    </div>
+    <br>
+    <input type="submit" class="btn btn-primary" value="Login">
+</form>

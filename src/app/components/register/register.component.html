@@ -1,0 +1,31 @@
+<br>
+<h2 class="page-header">Qyaho 회원가입</h2>
+<br>
+<form (ngSubmit)="onRegisterSubmit()">
+    <div class = "from-gruop">
+        <label> *이름 </label>
+        <input type="text" [(ngModel)]="name" name="name" class="form-control">
+    </div>
+    <div class="form-gruop">
+        <label> *이메일 </label>
+        <input type="text" [(ngModel)]="email" name="email" class="form-control">
+    </div>
+    <div class="form-gruop">
+        <label> 생년월일 </label>
+        <input type="date" [(ngModel)]="birth" name="birth" class="form-control">
+    </div>
+    <div class="form-gruop">
+        <label> *ID </label>
+        <input type="text" [(ngModel)]="username" name="username" class="form-control">
+    </div>
+    <div class="form-group">
+        <label> *비밀번호 </label>
+        <input type="password" [(ngModel)]="password1" name="password1" class="form-control">
+    </div>
+    <div class="form-group">
+        <label> *비밀번호 확인 </label>
+        <input type="password" [(ngModel)]="password2" name="password2" class="form-control">
+    </div>
+    <br>
+    <input type="submit" class="btn btn-primary" value="Submit">
+</form>
