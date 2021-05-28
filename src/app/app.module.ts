@@ -23,6 +23,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 
 
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
+import { CustomerNumComponent } from './components/customer-num/customer-num.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
     GeneratorComponent,
     QrscanComponent,
     CustomerListComponent,
+    CustomerNumComponent,
    
     
   ],

@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from "../../models/User"
-import { CustomersService } from "../../services/customers.service";
+import { Cus_num } from "../../models/cus.num"
+import { CustomerNumService } from "../../services/customers_num.service";
 import { FormBuilder, FormGroup, Validators,ReactiveFormsModule } from "@angular/forms";
 import Swal from "sweetalert2";
 
 @Component({
-  selector: 'app-customer-list',
-  templateUrl: './customer-list.component.html',
-  styleUrls: ['./customer-list.component.scss']
+  selector: 'app-customer-num',
+  templateUrl: './customer-num.component.html',
+  styleUrls: ['./customer-num.component.scss']
 })
-export class CustomerListComponent implements OnInit {
+export class CustomerNumComponent implements OnInit {
 
-  customers: User[] = [];
+  customers: Cus_num[] = [];
   customerForm: FormGroup;
-  selectedCustomer: User = new User();
+  selectedCustomer: Cus_num = new Cus_num();
   customersQuantity: number = 0;
 
-  constructor(private customer1Service: CustomersService, private _builder: FormBuilder) {
-    this.customer1Service.getCustomers().subscribe((data) => {
+  constructor(private customer1Service: CustomerNumService, private _builder: FormBuilder) {
+    this.customer1Service.getCustomerNums().subscribe((data) => {
       this.customers = data;
       this.customersQuantity = data.length;
     });
 
-    // this.employeeForm = this._builder.group({
-    //   first_name: ["", Validators.required],
-    //   last_name: ["", Validators.required],
-    //   email: ["", Validators.compose([Validators.required, Validators.email])],
-    //   avatar: ["", Validators.required],
-    // });
+    this.customerForm = this._builder.group({
+      first_name: ["", Validators.required],
+      last_name: ["", Validators.required],
+      email: ["", Validators.compose([Validators.required, Validators.email])],
+      avatar: ["", Validators.required],
+    });
   }
   ngOnInit(): void {
 
@@ -41,9 +41,9 @@ export class CustomerListComponent implements OnInit {
     this.customerForm.get("birth").reset();
   }
 
-  manageSubmit(values: User) {
+  manageSubmit(values: Cus_num) {
     if (this.selectedCustomer._id === undefined) {
-      this.customer1Service.addCustomer(values).subscribe((data) => {
+      this.customer1Service.addCustomerNum(values).subscribe((data) => {
         return this.customers.push(data);
       });
       this.customersQuantity = this.customersQuantity + 1;
@@ -53,7 +53,7 @@ export class CustomerListComponent implements OnInit {
         confirmButtonText: "Cool",
       });
     } else {
-      this.customer1Service.editCustomer(this.selectedCustomer._id, values);
+      this.customer1Service.editCustomerNum(this.selectedCustomer._id, values);
 
       const index = this.customers.findIndex(
         (user) => user._id === this.selectedCustomer._id
@@ -69,7 +69,7 @@ export class CustomerListComponent implements OnInit {
         confirmButtonText: "Cool",
       });
     }
-    this.selectedCustomer = new User();
+    this.selectedCustomer = new Cus_num();
     this._blankControls();
   }
   // 수정, 삭제
@@ -84,7 +84,7 @@ export class CustomerListComponent implements OnInit {
        confirmButtonText: "Yes, delete it!",
     }).then((result) => {
        if (result.value) {
-      this.customer1Service.deleteCustomer(id);
+      this.customer1Service.deleteCustomerNum(id);
       this.customers = this.customers.filter((customer) => customer._id !== id);
       this.customersQuantity = this.customersQuantity - 1;
        Swal.fire("Deleted!", "The employee has been deleted.", "success");
@@ -92,7 +92,7 @@ export class CustomerListComponent implements OnInit {
   });
   }
 
-   editCustomer(customer: User) {
+   editCustomer(customer: Cus_num) {
     this.selectedCustomer = customer;
     this.customerForm.get("first_name").setValue(this.selectedCustomer.name);
      this.customerForm.get("last_name").setValue(this.selectedCustomer.email);

@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { QrscanComponent } from './components/Qrscan/qrscan.component';
 import { GeneratorComponent } from './components/generator/generator.component';
 
-import { CustomerListComponent} from './components/customer-list/customer-list.component'
+ import { CustomerNumComponent} from './components/customer-num/customer-num.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'navbar', component: NavbarComponent },
@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'qrscan', component: QrscanComponent },
   { path: 'qrgen', component: GeneratorComponent },
-  { path: 'customer_list', component: CustomerListComponent}
+ { path: 'Customer_Num', component: CustomerNumComponent}
 ];
 
 @NgModule({

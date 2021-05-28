@@ -1,39 +1,40 @@
-
+    <h1>회원 목록 </h1>
     <div>
       <div class="text-right mt-6">
-        <p class="text-success">대기자: {{ employeesQuantity }}</p>
+        <p class="text-success">회원 수: {{ customersQuantity }}</p>
       </div>
       <table class="table">
         <thead class="thead-dark">
           <tr class="text-center">
             <th scope="col">Name</th>
-            <th scope="col">Email</th>
+            <!-- <th scope="col">Email</th> -->
             <th scope="col">ID</th>
             <th scope="col">birth</th>
-            <th scope="col">Delete</th>
+            <!-- <th scope="col">Delete</th> -->
           </tr>
         </thead>
+
         <tbody>
-          <tr *ngFor="let employee of employees">
+          <tr *ngFor="let customer of customers">
             <td class="text-center" style="width: 50%;">
-              <h5>{{ employee.name }}</h5>
+              <h5>{{ customer.name }}</h5>
             </td>
             <td class="text-center" style="width: 20%;">
-                <h5>{{ employee.email }}</h5>
+                <h5>{{ customer.email }}</h5>
               </td>
-            <td class="text-center" style="width: 20%;">
-              <h5>{{ employee.username }}</h5>
-            </td>
             <!-- <td class="text-center" style="width: 20%;">
-              <h5>{{ employee.password }}</h5>
+              <h5>{{ customer.username }}</h5>
+            </td> -->
+            <!-- <td class="text-center" style="width: 20%;">
+              <h5>{{ customer.password }}</h5>
             </td> -->
             <td class="text-center" style="width: 20%;">
-                <h5>{{ employee.birth }}</h5>
+                <h5>{{ customer.birth }}</h5>
               </td>
 
-            <td class="text-center" style="width: 5%;">
-              <button (click)="deleteEmployee(employee._id)" class="btn btn-danger">Delete</button>
-            </td>
+            <!-- <td class="text-center" style="width: 5%;">
+              <button (click)="deleteCustomer(customer._id)" class="btn btn-danger">Delete</button>
+            </td> -->
             <!-- <td class="text-center" style="width: 5%;">
               <button (click)="editEmployee(employee)" class="btn btn-warning">Edit</button>
             </td> -->

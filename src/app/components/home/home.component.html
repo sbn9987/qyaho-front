@@ -3,13 +3,10 @@
     .blank {
         height: 150px;
     }
-    
         </style>
-    
     <br>
     <br>    
     <br>
-   
    
     <div *ngIf="!checkLoggedIn()" style= "text-align: center; vertical-align:top">
     <h1 >아직 계정이 없으신가요?</h1>
@@ -24,5 +21,6 @@
 
         <br> 
        <div  *ngIf="checkLoggedIn()" style=  "text-align: left ; vertical-align:bottom;">
-      <app-customer-post></app-customer-post>
+      <app-customer-list></app-customer-list>
+      <app-customer-num></app-customer-num>
     </div>  
